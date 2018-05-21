@@ -325,7 +325,7 @@ class RoleModelView(ModelView):
     add_title = lazy_gettext('Add Role')
     edit_title = lazy_gettext('Edit Role')
 
-    label_columns = {'name': lazy_gettext('Name'), 'permissions': lazy_gettext('Permissions')}
+    label_columns = {'name': lazy_gettext('Name'), 'permissions': lazy_gettext('Permissions'), 'user': lazy_gettext('User')}
     list_columns = ['name', 'permissions']
     order_columns = ['name']
     
