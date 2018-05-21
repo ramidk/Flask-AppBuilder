@@ -295,21 +295,17 @@ class UserDBModelView(UserModelView):
 
 class UserStatsChartView(DirectByChartView):
     chart_title = lazy_gettext('User Statistics')
-    label_columns = {'username': lazy_gettext('User Name'),
-                     'login_count': lazy_gettext('Login count'),
-                     'fail_login_count': lazy_gettext('Failed login count')
-    }
-
+    label_columns = UserModelView.label_columns
     search_columns = UserModelView.search_columns
 
     definitions = [
         {
-            'label': 'Login Count',
+            'label': lazy_gettext('Login Count'),
             'group': 'username',
             'series': ['login_count']
         },
         {
-            'label': 'Failed Login Count',
+            'label': lazy_gettext('Failed Login Count'),
             'group': 'username',
             'series': ['fail_login_count']
         }
