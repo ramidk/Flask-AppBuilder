@@ -54,7 +54,8 @@ class PermissionViewModelView(ModelView):
     add_title = lazy_gettext('Add Permission on Views/Menus')
     edit_title = lazy_gettext('Edit Permission on Views/Menus')
 
-    label_columns = {'permission': lazy_gettext('Permission'), 'view_menu': lazy_gettext('View/Menu')}
+    label_columns = {'permission': lazy_gettext('Permission'), 'view_menu': lazy_gettext('View/Menu'),
+                     'role': lazy_gettext('Role')}
     list_columns = ['permission', 'view_menu']
     
 
@@ -166,7 +167,7 @@ class UserModelView(ModelView):
          {'fields': ['first_name', 'last_name', 'email'], 'expanded': True}),
     ]
 
-    search_exclude_columns = ['password']
+    search_exclude_columns = ['password', 'created', 'changed']
 
     add_columns = ['first_name', 'last_name', 'username', 'active', 'email', 'roles']
     edit_columns = ['first_name', 'last_name', 'username', 'active', 'email', 'roles']
@@ -296,7 +297,7 @@ class UserDBModelView(UserModelView):
 class UserStatsChartView(DirectByChartView):
     chart_title = lazy_gettext('User Statistics')
     label_columns = UserModelView.label_columns
-    search_columns = UserModelView.search_columns
+    search_exclude_columns = UserModelView.search_exclude_columns
 
     definitions = [
         {
