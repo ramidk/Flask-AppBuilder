@@ -120,10 +120,10 @@ var AdminFilters = function(element, labels, form, filters, active_filters) {
         	$field.select2({placeholder: "Select a State", allowClear: true});
         }
         if ($field.hasClass( "appbuilder_datetime" )) {
-        	$field.datetimepicker();
+        	$field.datetimepicker({locale: 'ru'});
         }
         if ($field.hasClass( "appbuilder_date" )) {
-        	$field.datetimepicker({pickTime: false });
+        	$field.datetimepicker({pickTime: false, locale: 'ru' });
         }
         lastCount += 1;
     };
