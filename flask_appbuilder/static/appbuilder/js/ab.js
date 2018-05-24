@@ -1,6 +1,34 @@
 //-----------------------------------------------------------
 // AJAX REST call to server to fetch data for select2 Slaves
 //-----------------------------------------------------------
+var tooltips: {
+    today: "К сегодняшней дате",
+    clear: "Очистить",
+    close: "Закрыть",
+    selectMonth: "Выбрать месяц",
+    prevMonth: "Предыдущий месяц",
+    nextMonth: "Следующий месяц",
+    selectYear: "Выбрать год",
+    prevYear: "Предыдущий год",
+    nextYear: "Следующий год",
+    selectDecade: "Выбрать декаду",
+    prevDecade: "Предыдущая декада",
+    nextDecade: "Следующая декада",
+    prevCentury: "Предыдущее столетие",
+    nextCentury: "Следующее столетие",
+    pickHour: "Выбрать час",
+    incrementHour: "Увеличить час",
+    decrementHour: "Уменьшить час",
+    pickMinute: "Выбрать минуту",
+    incrementMinute: "Увеличить минуту",
+    decrementMinute: "Уменьшить минуту",
+    pickSecond: "Выбрать секунду",
+    incrementSecond: "Увеличить секунду",
+    decrementSecond: "Уменьшить секунду",
+    togglePeriod: "Переключить период",
+    selectTime: "Выбрать время"
+};
+
 function loadSelectDataSlave(elem) {
     $(".my_select2_ajax_slave").each(function( index ) {
         var elem = $(this);
@@ -47,9 +75,9 @@ function loadSelectData() {
 //---------------------------------------
 $(document).ready(function() {
 
-    $('.appbuilder_datetime').datetimepicker({pickTime: false, locale: 'ru'});
+    $('.appbuilder_datetime').datetimepicker({pickTime: false, locale: 'ru', tooltips: tooltips});
     $('.appbuilder_date').datetimepicker({
-        pickTime: false, locale: 'ru' });
+        pickTime: false, locale: 'ru', tooltips: tooltips });
     $(".my_select2").select2({placeholder: "Select a State", allowClear: true});
     loadSelectData();
     loadSelectDataSlave();

@@ -14,7 +14,7 @@
 
         {% set url = url_for(modelview_name + '.action', name = action.name, pk = pk) %}
         <a href="javascript:void(0)" class="btn btn-sm btn-primary"
-           onclick="var a = new AdminActions(); return a.execute_single('{{url}}','{{action.confirmation}}');">
+           onclick="var a = new AdminActions(); return a.execute_single('{{url}}','{{_(action.confirmation)}}');">
             <i class="fa {{action.icon}}"></i>
                 {{_(action.text)}}
             </a>
@@ -44,7 +44,7 @@
             {% set action = actions.get(action_key) %}
                 <li>
                     <a href="javascript:void(0)"
-                       onclick="return modelActions.execute_multiple('{{action.name}}','{{action.confirmation}}');">
+                       onclick="return modelActions.execute_multiple('{{action.name}}','{{_(action.confirmation)}}');">
                         <i class="fa {{action.icon}}"></i>
                         {{ _(action.text) }}
                     </a>

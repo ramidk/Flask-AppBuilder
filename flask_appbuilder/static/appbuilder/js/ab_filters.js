@@ -1,3 +1,32 @@
+var tooltips: {
+    today: "К сегодняшней дате",
+    clear: "Очистить",
+    close: "Закрыть",
+    selectMonth: "Выбрать месяц",
+    prevMonth: "Предыдущий месяц",
+    nextMonth: "Следующий месяц",
+    selectYear: "Выбрать год",
+    prevYear: "Предыдущий год",
+    nextYear: "Следующий год",
+    selectDecade: "Выбрать декаду",
+    prevDecade: "Предыдущая декада",
+    nextDecade: "Следующая декада",
+    prevCentury: "Предыдущее столетие",
+    nextCentury: "Следующее столетие",
+    pickHour: "Выбрать час",
+    incrementHour: "Увеличить час",
+    decrementHour: "Уменьшить час",
+    pickMinute: "Выбрать минуту",
+    incrementMinute: "Увеличить минуту",
+    decrementMinute: "Уменьшить минуту",
+    pickSecond: "Выбрать секунду",
+    incrementSecond: "Увеличить секунду",
+    decrementSecond: "Уменьшить секунду",
+    togglePeriod: "Переключить период",
+    selectTime: "Выбрать время"
+};
+
+
 var AdminFilters = function(element, labels, form, filters, active_filters) {
     // Admin filters will deal with the adding and removing of search filters
     // :param labels:
@@ -120,10 +149,10 @@ var AdminFilters = function(element, labels, form, filters, active_filters) {
         	$field.select2({placeholder: "Select a State", allowClear: true});
         }
         if ($field.hasClass( "appbuilder_datetime" )) {
-        	$field.datetimepicker({locale: 'ru'});
+        	$field.datetimepicker({locale: 'ru', tooltips: tooltips});
         }
         if ($field.hasClass( "appbuilder_date" )) {
-        	$field.datetimepicker({pickTime: false, locale: 'ru' });
+        	$field.datetimepicker({pickTime: false, locale: 'ru', tooltips: tooltips });
         }
         lastCount += 1;
     };
