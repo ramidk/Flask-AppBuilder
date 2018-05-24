@@ -1,4 +1,4 @@
-var tooltips: {
+var tooltips = {
     today: "К сегодняшней дате",
     clear: "Очистить",
     close: "Закрыть",

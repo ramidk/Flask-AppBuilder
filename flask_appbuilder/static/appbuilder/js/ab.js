@@ -1,7 +1,7 @@
 //-----------------------------------------------------------
 // AJAX REST call to server to fetch data for select2 Slaves
 //-----------------------------------------------------------
-var tooltips: {
+var tooltips = {
     today: "К сегодняшней дате",
     clear: "Очистить",
     close: "Закрыть",
