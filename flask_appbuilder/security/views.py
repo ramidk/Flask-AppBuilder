@@ -245,6 +245,8 @@ class UserDBModelView(UserModelView):
 
     add_columns = ['first_name', 'last_name', 'username', 'active', 'email', 'roles', 'password', 'conf_password']
 
+    label_columns = dict(UserModelView.label_columns)
+
     @expose('/show/<pk>', methods=['GET'])
     @has_access
     def show(self, pk):
