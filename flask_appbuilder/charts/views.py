@@ -275,7 +275,7 @@ class BaseSimpleGroupByChartView(BaseChartView):
         value_columns = self.datamodel.query_simple_group(group_by, filters=joined_filters)
 
         widgets['chart'] = self.chart_widget(route_base=self.route_base,
-                                             chart_title=self.chart_title,
+                                             chart_title=lazy_gettext(self.chart_title),
                                              chart_type=self.chart_type,
                                              chart_3d=self.chart_3d,
                                              height=height,

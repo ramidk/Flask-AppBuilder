@@ -303,12 +303,12 @@ class UserStatsChartView(DirectByChartView):
 
     definitions = [
         {
-            'label': lazy_gettext('Login Count'),
+            'label': lazy_gettext('Login count'),
             'group': 'username',
             'series': ['login_count']
         },
         {
-            'label': lazy_gettext('Failed Login Count'),
+            'label': lazy_gettext('Failed login count'),
             'group': 'username',
             'series': ['fail_login_count']
         }
