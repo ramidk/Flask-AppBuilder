@@ -2,6 +2,7 @@ import json
 import logging
 from datetime import datetime, date
 from flask import Blueprint, session, flash, render_template, url_for, abort
+from flask_babel import lazy_gettext
 from ._compat import as_unicode
 from .forms import GeneralModelConverter
 from .widgets import FormWidget, ShowWidget, ListWidget, SearchWidget
@@ -179,7 +180,7 @@ class BaseView(object):
             :param name:
                 Name to prettify.
         """
-        return re.sub('[._]', ' ', name).title()
+        return lazy_gettext(re.sub('[._]', ' ', name).title())
 
     def update_redirect(self):
         """
