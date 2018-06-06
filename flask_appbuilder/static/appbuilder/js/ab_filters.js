@@ -152,7 +152,7 @@ var AdminFilters = function(element, labels, form, filters, active_filters) {
         	$field.datetimepicker({locale: 'ru', tooltips: tooltips});
         }
         if ($field.hasClass( "appbuilder_date" )) {
-        	$field.datetimepicker({pickTime: false, locale: 'ru', tooltips: tooltips });
+        	$field.datetimepicker({format: "YYYY-MM-DD", locale: 'ru', tooltips: tooltips });
         }
         lastCount += 1;
     };

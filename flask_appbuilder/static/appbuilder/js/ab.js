@@ -75,9 +75,9 @@ function loadSelectData() {
 //---------------------------------------
 $(document).ready(function() {
 
-    $('.appbuilder_datetime').datetimepicker({pickTime: false, locale: 'ru', tooltips: tooltips});
+    $('.appbuilder_datetime').datetimepicker({format: "YYYY-MM-DD", locale: 'ru', tooltips: tooltips});
     $('.appbuilder_date').datetimepicker({
-        pickTime: false, locale: 'ru', tooltips: tooltips });
+        format: "YYYY-MM-DD", locale: 'ru', tooltips: tooltips });
     $(".my_select2").select2({placeholder: "Select a State", allowClear: true});
     loadSelectData();
     loadSelectDataSlave();
