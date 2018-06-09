@@ -13,8 +13,9 @@
         {%  set action = actions.get(key) %}
 
         {% set url = url_for(modelview_name + '.action', name = action.name, pk = pk) %}
+        {% set confirmation = _(action.confirmation) if action.confirmation else '' %}
         <a href="javascript:void(0)" class="btn btn-sm btn-primary"
-           onclick="var a = new AdminActions(); return a.execute_single('{{url}}','{{_(action.confirmation)}}');">
+           onclick="var a = new AdminActions(); return a.execute_single('{{url}}',`{{confirmation}}`);">
             <i class="fa {{action.icon}}"></i>
                 {{_(action.text)}}
             </a>
@@ -42,9 +43,10 @@
     <ul class="dropdown-menu" role="menu">
     	{% for action_key in actions %}
             {% set action = actions.get(action_key) %}
+            {% set confirmation = _(action.confirmation) if action.confirmation else '' %}
                 <li>
                     <a href="javascript:void(0)"
-                       onclick="return modelActions.execute_multiple('{{action.name}}','{{_(action.confirmation)}}');">
+                       onclick="return modelActions.execute_multiple('{{action.name}}',`{{confirmation}}`);">
                         <i class="fa {{action.icon}}"></i>
                         {{ _(action.text) }}
                     </a>
