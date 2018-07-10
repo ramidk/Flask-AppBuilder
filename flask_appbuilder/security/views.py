@@ -240,7 +240,7 @@ class UserDBModelView(UserModelView):
                                                             description=lazy_gettext(
                                                                 'Please rewrite the user\'s password to confirm'),
                                                             validators=[EqualTo('password', message=lazy_gettext(
-                                                                'Passwords must match'))],
+                                                                'Passwords must match')), validators.DataRequired()],
                                                             widget=BS3PasswordFieldWidget())}
 
     add_columns = ['first_name', 'last_name', 'username', 'active', 'email', 'roles', 'password', 'conf_password']
