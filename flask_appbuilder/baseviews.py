@@ -675,6 +675,14 @@ class BaseCRUDView(BaseModelView):
             self.show_title = 'Show ' + self._prettify_name(class_name)
         self.title = self.list_title
 
+    def get_formatters_columns(self):
+        EMPTY_VALUES_MAP = {
+            None: lazy_gettext('None'),
+            False: lazy_gettext('False'),
+            True: lazy_gettext('True'),
+        }
+        return {x: lambda x: EMPTY_VALUES_MAP[x] if x in EMPTY_VALUES_MAP else x for x in self.show_columns}
+        
     def _init_properties(self):
         """
             Init Properties
@@ -685,7 +693,6 @@ class BaseCRUDView(BaseModelView):
         self._related_views = self._related_views or []
         self.description_columns = self.description_columns or {}
         self.validators_columns = self.validators_columns or {}
-        self.formatters_columns = self.formatters_columns or {}
         self.add_form_extra_fields = self.add_form_extra_fields or {}
         self.edit_form_extra_fields = self.edit_form_extra_fields or {}
         self.show_exclude_columns = self.show_exclude_columns or []
@@ -717,6 +724,8 @@ class BaseCRUDView(BaseModelView):
         else:
             if not self.edit_columns:
                 self.edit_columns = [x for x in list_cols if x not in self.edit_exclude_columns]
+                
+        self.formatters_columns = self.get_formatters_columns() or {}
 
     """
     -----------------------------------------------------
