@@ -681,7 +681,7 @@ class BaseCRUDView(BaseModelView):
             False: lazy_gettext('False'),
             True: lazy_gettext('True'),
         }
-        return {x: lambda x: EMPTY_VALUES_MAP[x] if x in EMPTY_VALUES_MAP else x for x in self.show_columns}
+        return {x: lambda x: EMPTY_VALUES_MAP[x] if x in EMPTY_VALUES_MAP else x for x in list(self.show_columns)}
         
     def _init_properties(self):
         """
