@@ -677,9 +677,9 @@ class BaseCRUDView(BaseModelView):
 
     def get_formatters_columns(self):
         EMPTY_VALUES_MAP = {
-            None: lazy_gettext('None'),
-            False: lazy_gettext('False'),
-            True: lazy_gettext('True'),
+            'None': lazy_gettext('None'),
+            'False': lazy_gettext('False'),
+            'True': lazy_gettext('True'),
         }
         return {x: lambda x: EMPTY_VALUES_MAP[str(x)] if str(x) in EMPTY_VALUES_MAP else x for x in self.show_columns}
         
